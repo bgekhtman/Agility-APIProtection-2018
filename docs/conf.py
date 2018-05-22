@@ -8,7 +8,7 @@
 classname = "API Protection with F5"
 
 # OPTIONAL: The URL to the GitHub Repository for this class
-github_repo = "https://github.com/bgekhtman/Agility-APIProtection-2018"
+github_repo = "https://bgekhtman/f5-Agility-RoadShow-APIProtection"
 
 # OPTIONAL: Google Analytics
 # googleanalytics_id = 'UA-85156643-4'
