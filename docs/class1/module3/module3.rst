@@ -17,6 +17,94 @@ parameters (e.g. company, user, group, as source, etc).
 The goal is to restrict access to any person API requests to only
 members of the HR department.
 
+
+------------------------------------------------
+You must complete module 2 before proceeding to Module 3.
+
+You can complete this lab using prebuilt objects to save time
+or create your own. If you are completing it using prebuilt that you added
+in module 2 to the virtual server, skip ahead to “Task 4: Validate your policy blocks 
+access to /person requests without HR group membership”.
+
+------------------------------------------------
+
+Add URL Branching to the Per Request Policy
+---------------------------------------------------------------------------------
+
+In this task you will add URL branching and a groups check to the per request policy
+
+1.	Go to Access -> Profiles / Policies -> **Per Request Policies**
+
+2.	Click Edit on **api-prp**
+
+3.	Clik the **+** between Start and Allow
+
+4.	Select **URL Branching** from the General Purpose tab and click **Add Item**
+
+5.	Click the **Branch Rules** tab
+
+6.	Change the name of the branch rule from Allow to person
+
+7.	Click **change** on the rule
+
+8.	Change URL Contains from domain.com to /person
+
+9.	Click **Finished**
+
+10.	Result should look like this:
+
+ .. image:: /_static/image52.png
+ 
+11.	Click **Save**
+ 
+12.	On the fallback branch change Reject to Allow. The result should look like this:
+
+ .. image:: /_static/image53.png
+ 
+Add Groups Check to the Per Request Policy
+---------------------------------------------------------------------------------
+ 
+ In this task you will add a group check to the URL branch created in the last step
+
+1.	Click **+** on the person branch between URL Branching and Allow
+
+2.	Select **Empty** from the General Purpose tab and click **Add Item**
+
+3.	Change Name to **“Group Check”**
+
+4.	Click **Branch Rules** tab
+
+5.	Click **Add Branch Rule**
+
+6.	Change name to **HR**
+
+7.	Click **change** on the expression
+
+8.	Click **Advanced** tab
+
+9.	Enter the following in the advanced box:
+
+	**expr { [mcget {session.oauth.scope.last.jwt.groups}] contains "hr" }**
+
+10.	Click **Finished**, the result should look like this:
+
+.. image:: /_static/image54.png
+ 
+11.	Click **Save**
+
+12.	On the branches after Group Check change the endings as follows:
+
+
+	HR -> Allow
+
+	Fallback -> Reject
+::
+
+
+The result should be:
+
+ .. image:: /_static/image55.png
+
 Validate your policy blocks access to person requests without HR group membership
 ---------------------------------------------------------------------------------
 

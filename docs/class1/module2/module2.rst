@@ -10,6 +10,194 @@ In this module you will implement authorization requirements. You will
 require a valid JWT (JSON Web Token) before a client can access the API.
 You will then gather a valid JWT and leverage it to make an API request.
 
+Create a JWK (JSON Web Key)
+--------------------------------------
+
+In this task you will create a JWK to use for validating the JWT sent. 
+In this lab you will use Octet and a shared secret, but options include 
+solutions like public/private key pair as well.
+
+1.	Go to Access -> Federation -> JSON Web Token -> Key Configuration -> Click **Create**
+
++--------------------------+-----------------------+
+| Field                    | Value                 |
++==========================+=======================+
+| Name		           | api-jwk	           |
++--------------------------+-----------------------+
+| ID		           | lab		   |
++--------------------------+-----------------------+
+| Type		           | Octet		   |
++--------------------------+-----------------------+
+| Signing Algorithm        | HS256		   |
++--------------------------+-----------------------+
+| Shared Secret	           | secret		   |
++--------------------------+-----------------------+
+
+ .. image:: /_static/image40.png
+ 
+Create an OAuth provider
+--------------------------------------
+
+In this task you will create an OAuth provider so that you can validate
+a JWT created by it.
+
+1. Go to Access -> Federation -> OAuth Client/Resource Server -> Provider -> Click **Create**
+
++------------------------------+-----------------------------------------------------+
+| Field                        | Value                                               |
++==============================+=====================================================+
+| Name		               | as-provider                                         |
++------------------------------+-----------------------------------------------------+
+| Type		               | F5				                     |
++------------------------------+-----------------------------------------------------+
+| OpenID URI	               | https://as.vlab.f5demo.com/f5-oauth2/v1/.well-known | 
+|			       | /openid-configuration 				     |
++------------------------------+-----------------------------------------------------+
+| Authentication URI           | https://as.vlab.f5demo.com/f5-oauth2/v1/authorize   |
++------------------------------+-----------------------------------------------------+
+| Token URI		       | https://as.vlab.f5demo.com/f5-oauth2/v1/token       |
++------------------------------+-----------------------------------------------------+
+| Token Validation Scope URI   | https://as.vlab.f5demo.com/f5-oauth2/v1/introspect  |
++------------------------------+-----------------------------------------------------+
+
+|
+2. Click **Discover** next the OpenID URI field.
+
+ .. image:: /_static/image41.png
+ 
+Setup the Token Configuration
+--------------------------------------
+
+In this task you will adjust some of the values retrieved automatically
+via OIDC discover tool. This is necessary because the OIDC AS cannot 
+provide you with the values specific to your audience.
+
+1.	Go to Access -> Federation -> JSON Web Token -> Token Configuration -> Click on **auto_jwt_as-provider**
+
+2.	Type https://api.vlab.f5demo.com into audience and click **Add**
+
+ .. image:: /_static/image42.png
+ 
+3.	Under Additional Key add the api-jwk you just created as allowed
+
+ .. image:: /_static/image43.png
+ 
+Create a JWT Provider
+--------------------------------------
+
+In this task you will create a JWT provider that can be selected in
+a per request or per session policy for JWT validation.
+
+1.	Go to Access -> Federation -> JSON Web Token -> Provider List -> Click **Create**
+
+2.	Name: as-jwt-provider
+
+3.	Provider: Select /Common/as-provider and click **Add**
+
+ .. image:: /_static/image44.png
+ 
+4.	Click Save
+
+Create a per session policy
+--------------------------------------
+
+In this task you will create a new per session policy to validate the
+JWT token and collect the claims data from parameters inside the JWT.
+
+1.	Go to Access -> Profiles/Policies -> Access Profiles (Per-Session Policies) -> Click **Create**
+
++---------------------------------+-----------------------------------------------------+
+| Field                           | Value                                               |
++=================================+=====================================================+
+| Name		                  | api-psp	                                        |
++---------------------------------+-----------------------------------------------------+
+| Profile Type                    | OAuth-Resource Server                               |
++---------------------------------+-----------------------------------------------------+
+| Profile Scope	                  | Profile					        |
++---------------------------------+-----------------------------------------------------+
+| Languages		          | English					        |
++---------------------------------+-----------------------------------------------------+
+
+|
+*Also note that the User Identification Method is set to OAuth Token*
+
+.. image:: /_static/image45.png
+| 
+.. image:: /_static/image46.png
+|  
+.. image:: /_static/image47.png
+
+3.	Click **Finished**
+
+4.	Click Edit on the line with the new api-psp policy you just created, a new tab will open
+
+.. image:: /_static/image48.png
+
+5.	Click the + between Start and Deny
+
+6.	Select OAuth Scope from the Authentication tab and click Add Item
+
++----------------------------------+-----------------------------------------------------+
+| Field                            | Value                                               |
++==================================+=====================================================+
+| Token Validation Mode            | Internal	                                         |
++----------------------------------+-----------------------------------------------------+
+| JWT Provider List                | /Common/as-jwt-provider                             |
++----------------------------------+-----------------------------------------------------+
+
+7.	Click **Save**
+
+8.	On the successful branch click the Deny ending and change it to Allow, then Save.
+
+9.	Apply the policy, the final should look like this:
+
+.. image:: /_static/image49.png
+
+10.	Close the new tab
+
+Create a per request policy
+--------------------------------------
+
+In this task you will create a per request policy to validate authorization on
+each request by checking for the presence and validity of a JWT.
+
+1.	Go to Access -> Profiles/Policies -> Per-Request Policies -> Click **Create**
+
+2.	Name: api-prp
+
+3.	Click **Finished**
+
+4.	Click Edit on the policy, another tab will appear
+
+5.	Your policy should look like this:
+
+.. image:: /_static/image50.png
+
+
+------------------------------------
+
+It is not necessary to “Apply Policy” after work on a per request policy 
+because it instantly applies to the next request,  unlike a per session policy,
+which will only apply to new requests after applying.
+
+------------------------------------
+
+6.	Close the new tab
+
+Add the policies to the virtual server
+--------------------------------------
+
+1.	Click Local Traffic -> Virtual Servers
+
+2.	Click **api.vlab.f5demo.com**
+
+3.	Change Access Profile from none to api-psp (NOT as-psp)
+
+4.	Change Per Request Policy from none to api-prp
+
+.. image:: /_static/image51.png
+
+
 Add the policies to the virtual server
 --------------------------------------
 
