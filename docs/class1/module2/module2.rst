@@ -63,6 +63,10 @@ a JWT created by it.
 2. Click **Discover** next the OpenID URI field.
 
  .. image:: /_static/image41.png
+
+
+3. Click **Save**.
+
  
 Setup the Token Configuration
 --------------------------------------
@@ -80,6 +84,8 @@ provide you with the values specific to your audience.
 3.	Under Additional Key add the api-jwk you just created as allowed
 
  .. image:: /_static/image43.png
+
+4. Click **Save**.
  
 Create a JWT Provider
 --------------------------------------
