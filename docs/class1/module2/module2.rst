@@ -51,7 +51,7 @@ a JWT created by it.
 | Type		               | F5				                     |
 +------------------------------+-----------------------------------------------------+
 | OpenID URI	               | https://as.vlab.f5demo.com/f5-oauth2/v1/.well-known | 
-|			       | /openid-configuration 				     |
+|			       |/openid-configuration 				     |
 +------------------------------+-----------------------------------------------------+
 | Authentication URI           | https://as.vlab.f5demo.com/f5-oauth2/v1/authorize   |
 +------------------------------+-----------------------------------------------------+
