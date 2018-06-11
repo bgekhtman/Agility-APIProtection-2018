@@ -101,7 +101,7 @@ a per request or per session policy for JWT validation.
 
  .. image:: /_static/image44.png
  
-4.	Click Save
+4.	Click **Save**.
 
 Create a per session policy
 --------------------------------------
@@ -209,17 +209,17 @@ Add the policies to the virtual server
 In this task you will add the policies you created to the virtual
 server.
 
-1. Open web-browser, connect to BIG-IP https://https://192.168.1.5 (login: admin, password: admin) and click Local Traffic -> **Virtual Servers**
+1. Open web-browser, connect to BIG-IP https://192.168.1.5 (login: admin, password: admin) and click Local Traffic -> **Virtual Servers**
 
 2. Click **api.vlab.f5demo.com**
 
-3. Change Access Profile from none to **prebuilt-api-psp**
+3. Change Access Profile from none to **api-psp**
 
-4. Change Per Request Policy from none to **prebuilt-api-prp**
+4. Change Per Request Policy from none to **api-prp**
 
- .. image:: /_static/assign.png
+ .. image:: /_static/virt-assign.png
 
-5. Click Update
+5. Click **Update**
 
 Test access to the API
 ------------------------------
