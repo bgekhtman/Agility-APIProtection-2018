@@ -1,126 +1,92 @@
-BIG-IP Authorization access control configuration
+Base API Security Policy
 =========================================
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
-BIG-IP APM can be used as authorization server as well resource server. On the diagram below this is shown as separate hardware components. 
+Create a new Application Security Policy
+------------------------------------------------
 
- .. image:: /_static/scheme.png
+In this task, you will create a Rapid deployment new application
+security policy.
 
-Although hardware segregation is not a strict requirement and those components can be hosted on the same BIG-IP, only VIPs should be different. In this lab we have used  **api.vlab.f5demo.com** as resource server and **as.vlab.f5demo.com** as an authorization server. 
-Check the steps below in order to configure coarse-grain authorization. 
+1. Log into TMUI
 
-Creation of JWK (JSON Web Key)
------------------------------------
+2. Create new Application Security policy (Security -> Application
+   Security -> Security Policies).
 
-In this task you will check configuration settings for JWK which is used for validating the sent JWT.In this lab we have used Octet and a shared secret, but options includesolutions like public/private key pair as well.
+3. Define the policy name “API\_Security\_Policy”
 
-Go to Access -> Federation -> JSON Web Token -> Key Configuration -> prebuilt-api-jwk
+4. Switch into Advanced mode on the top right corner. Select policy template in the dropdown menu - **Rapid Deployment Policy**
 
-It is configured according to data below
+5. Select Virtual Server in the dropdown menu - **api.vlab.f5demo.com**
 
-+---------------------+-----------+
-| Field               | Value     |
-+=====================+===========+
-| Name                | api-jwk   |
-+---------------------+-----------+
-| ID                  | lab       |
-+---------------------+-----------+
-| Type                | Octet     |
-+---------------------+-----------+
-| Signing Algorithm   | HS256     |
-+---------------------+-----------+
-| Shared Secret       | secret    |
-+---------------------+-----------+
+ .. image:: /_static/image381.png
 
-OAuth provider
---------------------------------
+6. Change Enforcement Mode into **Blocking** and Signature Staging into **Disabled**. Make sure "Policy is Case Sensitive" and "Differentiate between HTTP/WS and HTTPS/WSS URLs" are set to **Enabled**
 
-In this task you will check configuration settings for an OAuth provider so that JWT can be validated.
+ .. image:: /_static/image382.png
 
-Go to Access -> Federation -> OAuth Client/Resource Server ->
-   Provider -> prebuilt-as-provider
+7. Click **Create Policy** in the upper left corner. The policy will be created and assigned to Virtual Server
 
-The configuration settings is shown below.
+Create custom response for API Security
+----------------------------------
 
- .. image:: /_static/auth2.png
+In this task you will create response action when triggered API Security policy violation.
 
-Most of these settings have been discovered automatically from Authorization Server with the use of OIDC.
+1. Navigate to response page (Security -> Application Security -> Policy -> Response Pages).
 
-Token Configuration
--------------------------------------
+2. Select **Custom Response** in the Response Type dropdown menu. Replace default response in Response Body with **Attack detected, support ID: <%TS.request.ID()%>**
 
-In this task you will check the configuration of some of the values retrieved automatically via OIDC discover tool. Those values had to be adjusted manually because the OIDC AS cannot provide you with the values specific to your audience.
+ .. image:: /_static/image389.png 
 
-1. Go to Access -> Federation -> JSON Web Token -> Token Configuration
-   -> auto_jwt_prebuilt-as-provider
+3. Click Save
 
-2. Make sure **https://api.vlab.f5demo.com** have been defined as Issuer 
 
- .. image:: /_static/jsontoken.png
+Create JSON profile for API Security
+----------------------------------
 
-3. Under Additional Key make sure prebuilt-api-jwk is added into Allowed
+In this task you will create JSON profile which will be used in API security policy. 
 
- .. image:: /_static/apijwk.png
+1. Navigate to Security -> Application Security -> Content Profiles -> JSON Profiles and click Create
 
-The object prebuilt-as-jwk was precreated for the authorization server
-function. It matches api-jwk (and prebuilt-api-jwk) exactly because a
-shared key is needed on both the authorization server and resource side.
-In this case you could have reused it instead of making a new one, but
-in production your authorization server may not be the Big-IP you are
-protecting the API server on, and you would need to create it as shown
-here.
+2. Specify profile name **API_LAB_JSON** and Maximum Value Length **20** bytes, other settings should remain default
 
-JWT Provider
------------------------------
+ .. image:: /_static/image399.png
 
-In this task you will check configuration for a JWT provider that can be selected in a per request or per session policy for JWT validation.
+3. Click Create
 
-Go to Access -> Federation -> JSON Web Token -> Provider List -> prebuilt-as-jwt-provider
 
-Make sure prebuilt-as-provider is selected
+Create a new Logging profile
+------------------------------------
 
- .. image:: /_static/provider.png
+In this task, you will create a logging profile to log all requests.
 
-Per-session policy
------------------------------
+1. Create logging profile (Security -> Event Logs -> Logging Profiles). Define a name **API_Lab_logging** and set checkboxes for **Application Security**, **DoS Prevention** and **Bot Defense**
 
-In this task you will check per session policy which validating the
-JWT token and collecting the claims data from parameters inside the JWT.
+2. On the Application Security tab for the Request Type select **All requests**
 
-Go to Access -> Profiles/Policies -> Access Profiles (Per-Session Policies) -> prebuilt-api-psp
+ .. image:: /_static/image383.png
 
-Make sure profile type is set to OAuth-Resource Server and Profile Scope is Profile.
+3. On the DoS Protection tab set Local Publisher into **Enabled**
 
- .. image:: /_static/policy1.png
+ .. image:: /_static/image384.png
 
-Also make sure that the User Identification Method is set to OAuth token and default language is English.
+4. On the Bot Defense tab set to **Enabled** all available options as per screenshot below.
 
- .. image:: /_static/policy2.png
+ .. image:: /_static/image385.png
 
-Click **Access Policy** tab and then click **Edit Access Policy for Profile “prebuilt-api-psp”**. Examine the policy and click on OAuth Scope.
-Make sure Token Validation Mode is set to “Internal” and JWT Provider List is set to as-jwt-provider. The validation mode is set to be internal because JWT token will be validated internally instead of making an external call.
+5. Click Finished
 
- .. image:: /_static/policy3.png
+6. Apply the “API\_Lab\_Logging” profile to the virtual server. Navigate to Local Traffic => Virtual Servers => Virtual Server List, select **api.vlab.f5demo.com** and click the Security tab and move in Log profile API\_Lab-Logging to selected.
 
-Per-request policy
------------------------------
+ .. image:: /_static/image386.png
 
-You will check a per request policy to validate authorization on each request by checking for the presence and validity of a JWT.
+7. Click Update.
 
-Go to Access -> Profiles/Policies -> Per-Request Policies -> prebuilt-api-prp —> Click **Edit**
 
- .. image:: /_static/request1.png
 
-Click on **URL Branching** and and then **Branch Rules**. Note the URL expression.
 
- .. image:: /_static/request2.png
 
-Click on **Group Check** and and then **Branch Rules**. Note the expression.
-
- .. image:: /_static/request3.png
-
-Close the tab in the browser
 

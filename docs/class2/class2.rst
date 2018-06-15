@@ -1,7 +1,7 @@
-F5 BIG-IP configuration deep dive
+API Protection
 ===================
 
-In this section you will find detailed information about BIG-IP configuration used in the lab exercises. 
+In this section you will build security policy to protect API from attacks.
 
 .. toctree::
    :maxdepth: 1
