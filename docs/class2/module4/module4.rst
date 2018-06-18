@@ -1,7 +1,8 @@
 Parameters enforcement in API calls
 =========================================
 
-In this module you will examine security enforcement controls in regards to parameter values of API.
+In this module you will examine security enforcement controls in regards to parameter values of API. If you are using prebuilt objects proceed to `policy validation. <#validation>`__  Keep in mind, you will have to use objects with **prebuilt** suffix.
+
 
 Examine unprotected API environment 
 -----------------------------------
@@ -43,9 +44,12 @@ Parameters enforcement configuration
 
  .. image:: /_static/image407.png
 
-6. Go back to Postman and run **Parameter Length&Security** again - this API call should be blocked
+Validation
+-----------------------------------
 
-7. In the BIG-IP GUI to Security -> Event Logs -> Application - Requests and examine the last log message
+1. Go back to Postman and run **Parameter Length&Security** again - this API call should be blocked
+
+2. In the BIG-IP GUI to Security -> Event Logs -> Application - Requests and examine the last log message
 
  .. image:: /_static/image405.png
 
@@ -53,7 +57,7 @@ Note, the parameter's value for "salary" should be masked
 
  .. image:: /_static/image406.png
 
-7. Go back to Postman, expand **body** section of **Parameter Length&Security** and modify **middle_initial** parameter value to **B**, then click Save and Send - API call should go through
+3. Go back to Postman, expand **body** section of **Parameter Length&Security** and modify **middle_initial** parameter value to **B**, then click Save and Send - API call should go through
 
  .. image:: /_static/image408.png
 

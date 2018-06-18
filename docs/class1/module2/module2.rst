@@ -10,6 +10,8 @@ In this module you will implement authorization requirements. You will
 require a valid JWT (JSON Web Token) before a client can access the API.
 You will then gather a valid JWT and leverage it to make an API request.
 
+If you want to skip configuration section and use prebuilt objects proceed to `policy binding. <#binding>`__  Keep in mind, you will have to use objects with **prebuilt** suffix.
+
 Create a JWK (JSON Web Key)
 --------------------------------------
 
@@ -88,7 +90,8 @@ provide you with the values specific to your audience.
 4. Click **Save**.
  
 Create a JWT Provider
---------------------------------------
+---------------------
+
 
 In this task you will create a JWT provider that can be selected in
 a per request or per session policy for JWT validation.
@@ -104,7 +107,7 @@ a per request or per session policy for JWT validation.
 4.	Click **Save**.
 
 Create a per session policy
---------------------------------------
+---------------------------
 
 In this task you will create a new per session policy to validate the
 JWT token and collect the claims data from parameters inside the JWT.
@@ -161,7 +164,7 @@ JWT token and collect the claims data from parameters inside the JWT.
 10.	Close the new tab
 
 Create a per request policy
---------------------------------------
+---------------------------
 
 In this task you will create a per request policy to validate authorization on
 each request by checking for the presence and validity of a JWT.
@@ -189,27 +192,13 @@ which will only apply to new requests after applying.
 
 6.	Close the new tab
 
-Add the policies to the virtual server
---------------------------------------
-
-1.	Click Local Traffic -> Virtual Servers
-
-2.	Click **api.vlab.f5demo.com**
-
-3.	Change Access Profile from none to api-psp (NOT as-psp)
-
-4.	Change Per Request Policy from none to api-prp
-
-.. image:: /_static/image51.png
-
-
-Add the policies to the virtual server
+Binding
 --------------------------------------
 
 In this task you will add the policies you created to the virtual
 server.
 
-1. Open web-browser, connect to BIG-IP https://192.168.1.5 (login: admin, password: admin) and click Local Traffic -> **Virtual Servers**
+1. Open web-browser, connect to BIG-IP https://192.168.1.5 (login: admin, password: admin) and click Local Traffic -> Virtual Servers
 
 2. Click **api.vlab.f5demo.com**
 
@@ -222,7 +211,7 @@ server.
 5. Click **Update**
 
 Test access to the API
-------------------------------
+----------------------
 
 In this task you will test your access to the API and find it is blocked
 because you do not present a valid JWT.

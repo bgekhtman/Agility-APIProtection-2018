@@ -5,7 +5,8 @@ Illegal URL Protection
    :maxdepth: 1
    :glob:
 
-In this module you will examine security controls for accessing allowed URLs with API calls. You will use Postman client to simulate API call to illegal URL.
+In this module you will examine security controls for accessing allowed URLs with API calls. You will use Postman client to simulate API call to illegal URL. If you are using prebuilt objects proceed to `policy validation. <#validation>`__  Keep in mind, you will have to use objects with **prebuilt** suffix.
+
 
 
 Examine unprotected API environment 
@@ -47,13 +48,16 @@ Illegal URL protection configuration
 
 8. Click Save on the bottom of the screen and Apply Policy in the top right corner. You have just defined allowed URLs. Everything which is not allowed should be blocked by security policy
 
-9. Go back to Postman and run **Disallowed URL** API call again - this API call should be blocked 
+Validation
+-----------------------------------
+
+1. Go back to Postman and run **Disallowed URL** API call again - this API call should be blocked 
 
 .. image:: /_static/image394.png
 
-10. In the BIG-IP GUI to Security -> Event Logs -> Application - Requests and examine the last log message
+2. In the BIG-IP GUI to Security -> Event Logs -> Application - Requests and examine the last log message
 
 .. image:: /_static/image395.png
 
-11. Go back to Postman, expand **HR_API** collection, make sure you are using **hruser** token just like in the previous task and run the API call - it should return the list of departments 
+3. Go back to Postman, expand **HR_API** collection, make sure you are using **hruser** token just like in the previous task and run the API call - it should return the list of departments 
 

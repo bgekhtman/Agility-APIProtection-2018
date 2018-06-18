@@ -23,8 +23,7 @@ You must complete module 2 before proceeding to Module 3.
 
 You can complete this lab using prebuilt objects to save time
 or create your own. If you are completing it using prebuilt that you added
-in module 2 to the virtual server, skip ahead to “Task 4: Validate your policy blocks 
-access to /person requests without HR group membership”.
+in module 2 to the virtual server, skip ahead to `policy validation. <#validation>`__
 
 ------------------------------------------------
 
@@ -105,7 +104,7 @@ The result should be:
 
  .. image:: /_static/image55.png
 
-Validate your policy blocks access to person requests without HR group membership
+Validation
 ---------------------------------------------------------------------------------
 
 
@@ -205,5 +204,3 @@ groups, IPs, etc
 JWTs are typically short lived and may or may not use refresh tokens. In
 this lab the JWTs have been set as valid for several hours so you will
 not need to get new JWTs during the lab.
-
-More information about BIG-IP configuration settings available here :ref:`F5 BIG-IP configuration deep dive`

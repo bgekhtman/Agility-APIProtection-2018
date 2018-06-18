@@ -23,6 +23,8 @@ Connect to Client Jumphost and launch Postman
 
  .. image:: /_static/image1.png
 
+Tap **Remind me later** just in case it will suggest you to upgrade 
+
 Learn how to use the preconfigured API request collection
 ---------------------------------------------------------
 

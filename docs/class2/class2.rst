@@ -7,4 +7,5 @@ In this section you will build security policy to protect API from attacks.
    :maxdepth: 1
    :glob:
 
+
    module*/module*

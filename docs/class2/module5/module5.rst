@@ -1,7 +1,7 @@
 Attacks mitigation
 =========================================
 
-In this module you will examine security controls allowing to protect against known attack patterns against API infrastructure. 
+In this module you will examine security controls allowing to protect against known attack patterns against API infrastructure. If you are using prebuilt objects proceed to `policy validation. <#validation>`__  Keep in mind, you will have to use objects with **prebuilt** suffix.
 
 Examine unprotected API environment 
 -----------------------------------
@@ -39,7 +39,7 @@ Attacks protection configuration
 
  .. image:: /_static/image412.png
 
-Examine protected API environment 
+Validation 
 -----------------------------------
 
 1. Go back to Postman and run **Shellshock** API call again - the API call should be blocked

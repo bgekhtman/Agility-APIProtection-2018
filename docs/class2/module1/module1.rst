@@ -5,6 +5,8 @@ Base API Security Policy
    :maxdepth: 1
    :glob:
 
+If you want to skip configuration section and use prebuilt objects proceed to `policy binding. <#binding>`__  Keep in mind, you will have to use objects with **prebuilt** suffix.
+
 Create a new Application Security Policy
 ------------------------------------------------
 
@@ -79,11 +81,17 @@ In this task, you will create a logging profile to log all requests.
 
 5. Click Finished
 
-6. Apply the “API\_Lab\_Logging” profile to the virtual server. Navigate to Local Traffic => Virtual Servers => Virtual Server List, select **api.vlab.f5demo.com** and click the Security tab and move in Log profile API\_Lab-Logging to selected.
+Binding
+------------------------------------
 
- .. image:: /_static/image386.png
+1. Apply the “API\_Lab\_Logging” profile to the virtual server. Navigate to Local Traffic => Virtual Servers => Virtual Server List, select **api.vlab.f5demo.com** and click the Security tab and move in Log profile API\_Lab_Logging to selected.
 
-7. Click Update.
+.. NOTE::
+   If you are using prebuilt objects, make sure you enable **Application Security Policy** and specify the policy **prebuilt_API_Security_Policy** 
+
+.. image:: /_static/image386.png
+
+2. Click Update.
 
 
 

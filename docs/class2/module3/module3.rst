@@ -5,7 +5,7 @@ Illegal Content Type Protection
    :maxdepth: 1
    :glob:
 
-In this module you will examine security controls for checking allowed content type within API calls. You will use Postman client to simulate API call with illegal content-type.
+In this module you will examine security controls for checking allowed content type within API calls. You will use Postman client to simulate API call with illegal content-type. If you are using prebuilt objects proceed to `policy validation. <#validation>`__  Keep in mind, you will have to use objects with **prebuilt** suffix.
 
 Examine unprotected API environment 
 -----------------------------------
@@ -43,9 +43,12 @@ Illegal content type protection configuration
 
 6. Click Add, Update and Apply Policy
 
-7. Go back to Postman and run **Non-JSON request** again - this API call should be blocked
+Validation
+-----------------------------------
 
-8. In the BIG-IP GUI to Security -> Event Logs -> Application - Requests and examine the last log message
+1. Go back to Postman and run **Non-JSON request** again - this API call should be blocked
+
+2. In the BIG-IP GUI to Security -> Event Logs -> Application - Requests and examine the last log message
 
 .. image:: /_static/image401.png
 
