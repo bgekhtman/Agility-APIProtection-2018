@@ -25,7 +25,8 @@ Connect to Client Jumphost and launch Postman
 
 Tap **Remind me later** just in case it will suggest you to upgrade 
 
-Learn how to use the preconfigured API request collection
+
+API server environment 
 ---------------------------------------------------------
 
 In this task you will learn how to use the preconfigured set of requests
@@ -54,32 +55,32 @@ variables used in some queries in the body as well.
 Determine Police Department Salary Total
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Click on the Return Department Salary Total request in the collection
+1. Click on the **Return Department Salary Total** request in the collection
 
-2. Click Send
+2. Click **Send**
 
-3. Notice the total returned is 1106915639.7999947
+3. Notice the total returned is **1106915639.7999947**
 
 Change environment variable for department
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Notice the GET request URI has a variable in it named {{department}}
+1. Notice the GET request URI has a variable in it name **{{department}}**
 
  .. image:: /_static/image3.png
 
-2. Notice in the top right we have an environment set named “API
-   Protection Lab”.
+2. Notice in the top right we have an environment set named **API
+   Protection Lab**
 
-3. Click the gear in the top right, then click “manage environments”.
+3. Click the gear in the top right, then click **Manage Environments**
 
  .. image:: /_static/image4.png
 
-4. Click API Protection Lab
+4. Click **API Protection Lab**
 
  .. image:: /_static/image5.png
 
-5. Change the value for department from “police” to “fire” then click
-   update
+5. Change the value for department from **police** to **fire** then click
+   **Update**
 
  .. image:: /_static/image6.png
 
@@ -90,11 +91,45 @@ Change environment variable for department
 Determine Fire Department Salary Total
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Click Send
+1. Click **Send**
 
-2. Notice the total returned is now 457971613.68
+2. Notice the total returned is now **457971613.68**
 
-Return the Environment variables to default
----------------------------------------------------
+3. Return the Environment variables to default
 
-1. Change the department variable back to “police”
+4. Change the department variable back to **police**
+
+
+Optional - Build your own API calls with Postman
+-----------------------------------------
+
+You can practice with building your own API calls with Postman. 
+
+.. NOTE::
+   This section is optional and can be skipped
+
+The goal of this exercise is to gain practical expirience with API calls and to research existing BIG-IP configuration. For this purpose you are going to utilize BIG-IP iControl.
+
+1. In Postman create new collection, define a name **BIG-IP**
+
+2. Proceed to **Authorization** tab, select type **Basic Authentication** and provide username and password for accessing BIG-IP (admin : admin)
+
+.. image:: /_static/image421.png
+
+3. Tap **Create**
+
+4. Click on just created collection, hit **add requests**, define a name **get NTP** and associate with just created **BIG-IP** collection
+
+5. Click on just created request, define the URL **https://192.168.1.5/mgmt/tm/sys/ntp** and click **Send**  - you should receive response showing NTP data
+
+.. image:: /_static/image423.png
+
+6. Create another request and try to query **https://192.168.1.5/mgmt/tm/sys/dns** - this should provide you with DNS settings on BIG-IP
+
+.. NOTE::
+   You can use API reference document for BIG-IP and practice various API calls https://devcentral.f5.com/wiki/iControlREST.APIRef.ashx
+
+7. Examine BIG-IP virtual servers configuration with running **https://192.168.1.5/mgmt/tm/ltm/virtual**
+
+
+

@@ -19,7 +19,7 @@ In this task you will create a JWK to use for validating the JWT sent.
 In this lab you will use Octet and a shared secret, but options include 
 solutions like public/private key pair as well.
 
-1.	Go to Access -> Federation -> JSON Web Token -> Key Configuration -> Click **Create**
+1.	In the BIG-IP GUI go to Access -> Federation -> JSON Web Token -> Key Configuration -> click **Create**
 
 +--------------------------+-----------------------+
 | Field                    | Value                 |
@@ -43,7 +43,7 @@ Create an OAuth provider
 In this task you will create an OAuth provider so that you can validate
 a JWT created by it.
 
-1. Go to Access -> Federation -> OAuth Client/Resource Server -> Provider -> Click **Create**
+1. Go to Access -> Federation -> OAuth Client/Resource Server -> Provider -> click **Create**
 
 +------------------------------+--------------------------------------------------------------------------+
 | Field                        | Value                                                                    |
@@ -79,11 +79,11 @@ provide you with the values specific to your audience.
 
 1.	Go to Access -> Federation -> JSON Web Token -> Token Configuration -> Click on **auto_jwt_as-provider**
 
-2.	Type https://api.vlab.f5demo.com into audience and click **Add**
+2.	Type **https://api.vlab.f5demo.com** into **audience** and click **Add**
 
  .. image:: /_static/image42.png
  
-3.	Under Additional Key add the api-jwk you just created as allowed
+3.	Under **Additional Key** add the **api-jwk** you just created as allowed
 
  .. image:: /_static/image43.png
 
@@ -98,9 +98,9 @@ a per request or per session policy for JWT validation.
 
 1.	Go to Access -> Federation -> JSON Web Token -> Provider List -> Click **Create**
 
-2.	Name: as-jwt-provider
+2.	Define a name **as-jwt-provider**
 
-3.	Provider: Select /Common/as-provider and click **Add**
+3.	Provider: Select **/Common/as-provider** and click **Add**
 
  .. image:: /_static/image44.png
  
@@ -112,7 +112,7 @@ Create a per session policy
 In this task you will create a new per session policy to validate the
 JWT token and collect the claims data from parameters inside the JWT.
 
-1.	Go to Access -> Profiles/Policies -> Access Profiles (Per-Session Policies) -> Click **Create**
+1.	Go to Access -> Profiles/Policies -> Access Profiles (Per-Session Policies) -> click **Create**
 
 +---------------------------------+-----------------------------------------------------+
 | Field                           | Value                                               |
@@ -137,13 +137,13 @@ JWT token and collect the claims data from parameters inside the JWT.
 
 3.	Click **Finished**
 
-4.	Click Edit on the line with the new api-psp policy you just created, a new tab will open
+4.	Click **Edit** on the line with the new api-psp policy you just created, a new tab will open
 
 .. image:: /_static/image48.png
 
-5.	Click the + between Start and Deny
+5.	Click the **+** between Start and Deny
 
-6.	Select OAuth Scope from the Authentication tab and click Add Item
+6.	Select **OAuth Scope** from the **Authentication** tab and click **Add Item**
 
 +----------------------------------+-----------------------------------------------------+
 | Field                            | Value                                               |
@@ -155,7 +155,7 @@ JWT token and collect the claims data from parameters inside the JWT.
 
 7.	Click **Save**
 
-8.	On the successful branch click the Deny ending and change it to Allow, then Save.
+8.	On the successful branch click the **Deny** ending and change it to **Allow**, then **Save**
 
 9.	Apply the policy, the final should look like this:
 
@@ -169,13 +169,13 @@ Create a per request policy
 In this task you will create a per request policy to validate authorization on
 each request by checking for the presence and validity of a JWT.
 
-1.	Go to Access -> Profiles/Policies -> Per-Request Policies -> Click **Create**
+1.	Go to Access -> Profiles/Policies -> Per-Request Policies -> click **Create**
 
-2.	Name: api-prp
+2.	Define a name **api-prp**
 
 3.	Click **Finished**
 
-4.	Click Edit on the policy, another tab will appear
+4.	Click **Edit** on the policy, another tab will appear
 
 5.	Your policy should look like this:
 
@@ -198,7 +198,7 @@ Binding
 In this task you will add the policies you created to the virtual
 server.
 
-1. Open web-browser, connect to BIG-IP https://192.168.1.5 (login: admin, password: admin) and click Local Traffic -> Virtual Servers
+1. In the BIG-IP GUI go to Local Traffic -> Virtual Servers
 
 2. Click **api.vlab.f5demo.com**
 
@@ -229,7 +229,7 @@ because you do not present a valid JWT.
 Get a JWT from the Authorization Server
 ---------------------------------------
 
-1. Click the **type** drop down under the **authorization** tab.
+1. Click the **type** drop down under the **authorization** tab
 
 2. Select **OAuth 2.0**
 
@@ -297,7 +297,7 @@ Send the request with JWT and review response
 
 1. Click **Send** and review the response.
 
-2. Note that now it is a 200 OK instead of 401 Unauthorized and that you
+2. Note that now it is a **200 OK** instead of 401 Unauthorized and that you
    have response data in the body.
 
  .. image:: /_static/image25.png

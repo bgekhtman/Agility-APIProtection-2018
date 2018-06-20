@@ -18,12 +18,8 @@ The goal is to restrict access to any person API requests to only
 members of the HR department.
 
 
-------------------------------------------------
-You must complete module 2 before proceeding to Module 3.
-
 You can complete this lab using prebuilt objects to save time
-or create your own. If you are completing it using prebuilt that you added
-in module 2 to the virtual server, skip ahead to `policy validation. <#validation>`__
+or create your own. If you are using prebuilt objects, skip ahead to `policy validation. <#validation>`__
 
 ------------------------------------------------
 
