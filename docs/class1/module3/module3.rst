@@ -48,17 +48,17 @@ In this task you will add URL branching and a groups check to the per request po
 
 10.	Result should look like this:
 
- .. image:: /_static/image52.png
- 
+ .. image:: /images/image52.png
+
 11.	Click **Save**
- 
+
 12.	On the fallback branch change Reject to Allow. The result should look like this:
 
- .. image:: /_static/image53.png
- 
+ .. image:: /images/image53.png
+
 Add Groups Check to the Per Request Policy
 ---------------------------------------------------------------------------------
- 
+
  In this task you will add a group check to the URL branch created in the last step
 
 1.	Click **+** on the person branch between URL Branching and Allow
@@ -83,8 +83,8 @@ Add Groups Check to the Per Request Policy
 
 10.	Click **Finished**, the result should look like this:
 
-.. image:: /_static/image54.png
- 
+.. image:: /images/image54.png
+
 11.	Click **Save**
 
 12.	On the branches after Group Check change the endings as follows:
@@ -98,7 +98,7 @@ Add Groups Check to the Per Request Policy
 
 The result should be:
 
- .. image:: /_static/image55.png
+ .. image:: /images/image55.png
 
 Validation
 ---------------------------------------------------------------------------------
@@ -121,14 +121,14 @@ value in the JWT.
 
 5. Click **Preview Request** and note the header has been inserted
 
- .. image:: /_static/image30.png
+ .. image:: /images/image30.png
 
 6. Click **Send**
 
 7. The result should be a **401 unauthorized** with no data in the body.
    The header will report an invalid token.
 
- .. image:: /_static/image31.png
+ .. image:: /images/image31.png
 
 You were denied access because the JWT retrieved by this user is not
 allowed to access that data. We can resolve this by using credentials
@@ -142,23 +142,23 @@ In this task you will get another JWT and use that to gain access to the
 
 1.  Click Get **New Access Token**
 
- .. image:: /_static/image32.png
+ .. image:: /images/image32.png
 
 2.  Change the token name to **hruser**, the rest of the settings should
     be already correct.
 
- .. image:: /_static/image33.png
+ .. image:: /images/image33.png
 
 3.  Click **Request Token**
 
 4.  Select **hruser** at the logon page and press logon.
 
- .. image:: /_static/image34.png
+ .. image:: /images/image34.png
 
 5.  A JWT should be returned and your JWT management token window will
     look like this:
 
- .. image:: /_static/image35.png
+ .. image:: /images/image35.png
 
 6.  Notice you now have two tokens, and click the X to close the window
 
@@ -166,12 +166,12 @@ In this task you will get another JWT and use that to gain access to the
 
 8.  Click Preview Request
 
- .. image:: /_static/image36.png
+ .. image:: /images/image36.png
 
 9.  Click Send, you should get a 200 OK response and data in the
     response body like this:
 
- .. image:: /_static/image37.png
+ .. image:: /images/image37.png
 
 10. You can now change the token used on any request by using this
     process:

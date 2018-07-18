@@ -7,24 +7,24 @@ Illegal Content Type Protection
 
 In this module you will examine security controls for checking allowed content type within API calls. You will use Postman client to simulate API call with illegal content-type. If you are using prebuilt objects proceed to `policy validation. <#validation>`__  Keep in mind, you will have to use objects with **prebuilt** suffix.
 
-Examine unprotected API environment 
+Examine unprotected API environment
 -----------------------------------
 
 1. Launch Postman application
 
 2. Click Collections -> HR_API_Illegal -> Non-JSON request. Click **Body** and examine the payload of API POST call
 
- .. image:: /_static/image398.png
+ .. image:: /images/image398.png
 
 3. Make sure authorization type is set to **OAuth 2.0**. From the list of available tokens select **hruser** and click **Preview Request**. Then click **Send**
 
- .. image:: /_static/image390.png
+ .. image:: /images/image390.png
 
 3. Examine the output
 
- .. image:: /_static/image397.png
+ .. image:: /images/image397.png
 
-At this time we don't have any specific security policy related to illegal content type, so the API call is expected to come through. API server is not able to decode non-JSON payload.   
+At this time we don't have any specific security policy related to illegal content type, so the API call is expected to come through. API server is not able to decode non-JSON payload.
 
 Illegal content type protection configuration
 -----------------------------------
@@ -39,7 +39,7 @@ Illegal content type protection configuration
 
 5. In the Request Body Handling dropdown menu select **JSON** and in the Profile Name specify **API_LAB_JSON**
 
- .. image:: /_static/image397.png
+ .. image:: /images/image397.png
 
 6. Click Add, Update and Apply Policy
 
@@ -50,6 +50,4 @@ Validation
 
 2. In the BIG-IP GUI to Security -> Event Logs -> Application - Requests and examine the last log message
 
-.. image:: /_static/image401.png
-
-
+.. image:: /images/image401.png

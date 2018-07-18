@@ -21,12 +21,12 @@ Connect to Client Jumphost and launch Postman
 
 2. Launch the Postman application. The icon looks like this:
 
- .. image:: /_static/image1.png
+ .. image:: /images/image1.png
 
-Tap **Remind me later** just in case it will suggest you to upgrade 
+Tap **Remind me later** just in case it will suggest you to upgrade
 
 
-API server environment 
+API server environment
 ---------------------------------------------------------
 
 In this task you will learn how to use the preconfigured set of requests
@@ -42,7 +42,7 @@ in the HR API collection.
 
 5. Notice the returned list of departments
 
- .. image:: /_static/image2.png
+ .. image:: /images/image2.png
 
 Learn how to change environment variables
 -----------------------------------------
@@ -66,27 +66,27 @@ Change environment variable for department
 
 1. Notice the GET request URI has a variable in it name **{{department}}**
 
- .. image:: /_static/image3.png
+ .. image:: /images/image3.png
 
 2. Notice in the top right we have an environment set named **API
    Protection Lab**
 
 3. Click the gear in the top right, then click **Manage Environments**
 
- .. image:: /_static/image4.png
+ .. image:: /images/image4.png
 
 4. Click **API Protection Lab**
 
- .. image:: /_static/image5.png
+ .. image:: /images/image5.png
 
 5. Change the value for department from **police** to **fire** then click
    **Update**
 
- .. image:: /_static/image6.png
+ .. image:: /images/image6.png
 
 6. Click the X in the top right to close the manage environments window
 
- .. image:: /_static/image7.png
+ .. image:: /images/image7.png
 
 Determine Fire Department Salary Total
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -103,7 +103,7 @@ Determine Fire Department Salary Total
 Optional - Build your own API calls with Postman
 -----------------------------------------
 
-You can practice with building your own API calls with Postman. 
+You can practice with building your own API calls with Postman.
 
 .. NOTE::
    This section is optional and can be skipped
@@ -114,7 +114,7 @@ The goal of this exercise is to gain practical expirience with API calls and to 
 
 2. Proceed to **Authorization** tab, select type **Basic Authentication** and provide username and password for accessing BIG-IP (admin : admin)
 
-.. image:: /_static/image421.png
+.. image:: /images/image421.png
 
 3. Tap **Create**
 
@@ -122,7 +122,7 @@ The goal of this exercise is to gain practical expirience with API calls and to 
 
 5. Click on just created request, define the URL **https://192.168.1.5/mgmt/tm/sys/ntp** and click **Send**  - you should receive response showing NTP data
 
-.. image:: /_static/image423.png
+.. image:: /images/image423.png
 
 6. Create another request and try to query **https://192.168.1.5/mgmt/tm/sys/dns** - this should provide you with DNS settings on BIG-IP
 
@@ -130,6 +130,3 @@ The goal of this exercise is to gain practical expirience with API calls and to 
    You can use API reference document for BIG-IP and practice various API calls https://devcentral.f5.com/wiki/iControlREST.APIRef.ashx
 
 7. Examine BIG-IP virtual servers configuration with running **https://192.168.1.5/mgmt/tm/ltm/virtual**
-
-
-
