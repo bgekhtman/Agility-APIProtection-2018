@@ -34,25 +34,27 @@ In this task you will add URL branching and a groups check to the per request po
 
 3.	Clik the **+** between Start and Allow
 
-4.	Select **URL Branching** from the General Purpose tab and click **Add Item**
+4.  Select the **General Purpose** tab
 
-5.	Click the **Branch Rules** tab
+5.	Select **URL Branching** from the General Purpose tab and click **Add Item**
 
-6.	Change the name of the branch rule from Allow to person
+6.	Click the **Branch Rules** tab
 
-7.	Click **change** on the rule
+7.	Change the name of the branch rule from Allow to person
 
-8.	Change URL Contains from domain.com to /person
+8.	Click **change** on the rule
 
-9.	Click **Finished**
+9.	Change URL Contains from domain.com to /person
 
-10.	Result should look like this:
+10.	Click **Finished**
+
+11.	Result should look like this:
 
  .. image:: images/image52.png
 
-11.	Click **Save**
+12.	Click **Save**
 
-12.	On the fallback branch change Reject to Allow. The result should look like this:
+13.	On the fallback branch change Reject to Allow. The result should look like this:
 
  .. image:: images/image53.png
 
