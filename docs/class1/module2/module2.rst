@@ -35,7 +35,7 @@ solutions like public/private key pair as well.
 | Shared Secret	           | secret		   |
 +--------------------------+-----------------------+
 
- .. image:: /images/image40.png
+ .. image:: images/image40.png
 
 Create an OAuth provider
 --------------------------------------
@@ -64,7 +64,7 @@ a JWT created by it.
 |
 2. Click **Discover** next the OpenID URI field.
 
- .. image:: /images/image41.png
+ .. image:: images/image41.png
 
 
 3. Click **Save**.
@@ -81,11 +81,11 @@ provide you with the values specific to your audience.
 
 2.	Type **https://api.vlab.f5demo.com** into **audience** and click **Add**
 
- .. image:: /images/image42.png
+ .. image:: images/image42.png
 
 3.	Under **Additional Key** add the **api-jwk** you just created as allowed
 
- .. image:: /images/image43.png
+ .. image:: images/image43.png
 
 4. Click **Save**.
 
@@ -102,7 +102,7 @@ a per request or per session policy for JWT validation.
 
 3.	Provider: Select **/Common/as-provider** and click **Add**
 
- .. image:: /images/image44.png
+ .. image:: images/image44.png
 
 4.	Click **Save**.
 
@@ -129,17 +129,17 @@ JWT token and collect the claims data from parameters inside the JWT.
 |
 *Also note that the User Identification Method is set to OAuth Token*
 
-.. image:: /images/image45.png
+.. image:: images/image45.png
 
-.. image:: /images/image46.png
+.. image:: images/image46.png
 
-.. image:: /images/image47.png
+.. image:: images/image47.png
 
 3.	Click **Finished**
 
 4.	Click **Edit** on the line with the new api-psp policy you just created, a new tab will open
 
-.. image:: /images/image48.png
+.. image:: images/image48.png
 
 5.	Click the **+** between Start and Deny
 
@@ -159,7 +159,7 @@ JWT token and collect the claims data from parameters inside the JWT.
 
 9.	Apply the policy, the final should look like this:
 
-.. image:: /images/image49.png
+.. image:: images/image49.png
 
 10.	Close the new tab
 
@@ -179,7 +179,7 @@ each request by checking for the presence and validity of a JWT.
 
 5.	Your policy should look like this:
 
-.. image:: /images/image50.png
+.. image:: images/image50.png
 
 
 ------------------------------------
@@ -206,7 +206,7 @@ server.
 
 4. Change Per Request Policy from none to **api-prp**
 
- .. image:: /images/virt-assign.png
+ .. image:: images/virt-assign.png
 
 5. Click **Update**
 
@@ -224,7 +224,7 @@ because you do not present a valid JWT.
 3. Review the response, note the 401 unauthorized and the header
    indicating you did not present a valid token
 
- .. image:: /images/image20.png
+ .. image:: images/image20.png
 
 Get a JWT from the Authorization Server
 ---------------------------------------
@@ -235,7 +235,7 @@ Get a JWT from the Authorization Server
 
 3. Click **Get New Access Token**
 
- .. image:: /images/image21.png
+ .. image:: images/image21.png
 
 Postman provides a mechanism to handle the OAuth client workflow
 automatically. This means it will handle getting the authorization code
@@ -268,7 +268,7 @@ URL specified here is a special callback URL that the Postman client
 intercepts and handles rather than calling out to the getpostman.com
 website.
 
- .. image:: /images/image22.png
+ .. image:: images/image22.png
 
 1. Click **Request Token**
 
@@ -285,12 +285,12 @@ website.
 
 6. Click **Preview Request**, the result should be this:
 
- .. image:: /images/image23.png
+ .. image:: images/image23.png
 
 7. Go to the **Headers** tab and review the inserted **Bearer** token
    header:
 
- .. image:: /images/image24.png
+ .. image:: images/image24.png
 
 Send the request with JWT and review response
 ---------------------------------------------
@@ -300,7 +300,7 @@ Send the request with JWT and review response
 2. Note that now it is a **200 OK** instead of 401 Unauthorized and that you
    have response data in the body.
 
- .. image:: /images/image25.png
+ .. image:: images/image25.png
 
 You have now implemented coarse grained authorization and are requiring
 clients to request a JWT from a trusted authorization server before

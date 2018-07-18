@@ -21,7 +21,7 @@ Connect to Client Jumphost and launch Postman
 
 2. Launch the Postman application. The icon looks like this:
 
- .. image:: /images/image1.png
+ .. image:: images/image1.png
 
 Tap **Remind me later** just in case it will suggest you to upgrade
 
@@ -42,7 +42,7 @@ in the HR API collection.
 
 5. Notice the returned list of departments
 
- .. image:: /images/image2.png
+ .. image:: images/image2.png
 
 Learn how to change environment variables
 -----------------------------------------
@@ -66,27 +66,27 @@ Change environment variable for department
 
 1. Notice the GET request URI has a variable in it name **{{department}}**
 
- .. image:: /images/image3.png
+ .. image:: images/image3.png
 
 2. Notice in the top right we have an environment set named **API
    Protection Lab**
 
 3. Click the gear in the top right, then click **Manage Environments**
 
- .. image:: /images/image4.png
+ .. image:: images/image4.png
 
 4. Click **API Protection Lab**
 
- .. image:: /images/image5.png
+ .. image:: images/image5.png
 
 5. Change the value for department from **police** to **fire** then click
    **Update**
 
- .. image:: /images/image6.png
+ .. image:: images/image6.png
 
 6. Click the X in the top right to close the manage environments window
 
- .. image:: /images/image7.png
+ .. image:: images/image7.png
 
 Determine Fire Department Salary Total
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -114,7 +114,7 @@ The goal of this exercise is to gain practical expirience with API calls and to 
 
 2. Proceed to **Authorization** tab, select type **Basic Authentication** and provide username and password for accessing BIG-IP (admin : admin)
 
-.. image:: /images/image421.png
+.. image:: images/image421.png
 
 3. Tap **Create**
 
@@ -122,7 +122,7 @@ The goal of this exercise is to gain practical expirience with API calls and to 
 
 5. Click on just created request, define the URL **https://192.168.1.5/mgmt/tm/sys/ntp** and click **Send**  - you should receive response showing NTP data
 
-.. image:: /images/image423.png
+.. image:: images/image423.png
 
 6. Create another request and try to query **https://192.168.1.5/mgmt/tm/sys/dns** - this should provide you with DNS settings on BIG-IP
 
