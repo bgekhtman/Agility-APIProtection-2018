@@ -16,11 +16,11 @@ DoS profile configuration
 
 3. Proceed to **TPS-Based Detection**, make sure it is enabled and set mitigation criteria **By Source IP**: **reached at least** value to **2** and **absolute threshold TPS reached** to **3** tps, then click Update
 
- .. image:: /images/image414.png
+ .. image:: images/image414.png
 
 4. Navigate to Local Traffic -> Virtual Servers -> **api.vlab.f5demo.com -> Security -> Policies and enable DoS Protection Profile; choose just configured **API_DoS** profile from the dropdown menu
 
- .. image:: /images/image415.png
+ .. image:: images/image415.png
 
 Examine protected API environment
 -----------------------------------
@@ -29,18 +29,18 @@ Examine protected API environment
 
 2. Make sure authorization type is set to **OAuth 2.0**. From the list of available tokens select **hruser** and click **Preview Request**. Then click **Send**. Make sure you are getting expected response and click **Save**
 
- .. image:: /images/image416.png
+ .. image:: images/image416.png
 
 3. Click **Runner** in the Postman
 
- .. image:: /images/image417.png
+ .. image:: images/image417.png
 
 4. Click on **HR_API_DoS** collection, select the **Environment** - API Protection Lab, set Iterations to **500**, Log Responses set to **For no requests** and click Run
 
- .. image:: /images/image418.png
+ .. image:: images/image418.png
 
 5. After short period of time Postman Runner should report failing transactions (it may not and gracefully handle the rate limiting, proceed to check logs in next steps anyway)
 
- .. image:: /images/image419.png
+ .. image:: images/image419.png
 
 6. In the BIG-IP GUI navigate to Security -> Event Logs -> DoS -> Application Events and examine messages in the logs

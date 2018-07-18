@@ -14,7 +14,7 @@ Examine protected API environment
 
 2. In the BIG-IP GUI navigate to Security -> Event Logs -> Application - Requests and examine the last log message; Note violation type and TLS fingerprint
 
- .. image:: /images/image420.png
+ .. image:: images/image420.png
 
 3. Open the browser and access **https://anonymous_api.vlab.f5demo.com/department** - quickly update the page a few times to get the blocking response
 

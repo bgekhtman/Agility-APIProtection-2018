@@ -13,13 +13,13 @@ Examine unprotected API environment
 
 3. Make sure authorization type is set to **OAuth 2.0**. From the list of available tokens select **hruser** and click **Preview Request**. Then click **Send**
 
- .. image:: /images/image390.png
+ .. image:: images/image390.png
 
 4. Examine the output
 
 5. Navigate to BIG-IP GUI (Security -> Event Logs -> Application -> Requests and clear the filter for illegal requests
 
- .. image:: /images/image402.png
+ .. image:: images/image402.png
 
 6. Examine the log entry from the last API call. Notice, all parameter values are stored as a plain text
 
@@ -32,17 +32,17 @@ Parameters enforcement configuration
 
 2. Create parameter **middle_initial**, uncheck **Perform Staging** and define the value for **Maximum Length** as **1**
 
- .. image:: /images/image403.png
+ .. image:: images/image403.png
 
 3. Create parameter **salary**, uncheck **Perform Staging** and check **Sensitive Parameter**, then click Create
 
- .. image:: /images/image404.png
+ .. image:: images/image404.png
 
 4. Navigate to Security -> Application Security -> Policy Building -> Learning and Blocking Settings and expand **Parameters** section
 
 5. Set checkboxes against Alarm and Block for **Illegal parameter value length** violation, then click Save and Apply Policy
 
- .. image:: /images/image407.png
+ .. image:: images/image407.png
 
 Validation
 -----------------------------------
@@ -51,12 +51,12 @@ Validation
 
 2. In the BIG-IP GUI to Security -> Event Logs -> Application - Requests and examine the last log message
 
- .. image:: /images/image405.png
+ .. image:: images/image405.png
 
 Note, the parameter's value for "salary" should be masked
 
- .. image:: /images/image406.png
+ .. image:: images/image406.png
 
 3. Go back to Postman, expand **body** section of **Parameter Length&Security** and modify **middle_initial** parameter value to **B**, then click Save and Send - API call should go through
 
- .. image:: /images/image408.png
+ .. image:: images/image408.png

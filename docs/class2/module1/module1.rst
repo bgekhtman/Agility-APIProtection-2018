@@ -24,11 +24,11 @@ security policy.
 
 5. Select Virtual Server in the dropdown menu - **api.vlab.f5demo.com**
 
- .. image:: /images/image381.png
+ .. image:: images/image381.png
 
 6. Change Enforcement Mode into **Blocking** and Signature Staging into **Disabled**. Make sure "Policy is Case Sensitive" and "Differentiate between HTTP/WS and HTTPS/WSS URLs" are set to **Enabled**
 
- .. image:: /images/image382.png
+ .. image:: images/image382.png
 
 7. Click **Create Policy** in the upper left corner. The policy will be created and assigned to Virtual Server
 
@@ -41,7 +41,7 @@ In this task you will create response action when triggered API Security policy 
 
 2. Select **Custom Response** in the Response Type dropdown menu. Replace default response in Response Body with **Attack detected, support ID: <%TS.request.ID()%>**
 
- .. image:: /images/image389.png
+ .. image:: images/image389.png
 
 3. Click Save
 
@@ -55,7 +55,7 @@ In this task you will create JSON profile which will be used in API security pol
 
 2. Specify profile name **API_LAB_JSON** and Maximum Value Length **20** bytes, other settings should remain default
 
- .. image:: /images/image399.png
+ .. image:: images/image399.png
 
 3. Click Create
 
@@ -69,15 +69,15 @@ In this task, you will create a logging profile to log all requests.
 
 2. On the Application Security tab for the Request Type select **All requests**
 
- .. image:: /images/image383.png
+ .. image:: images/image383.png
 
 3. On the DoS Protection tab set Local Publisher into **Enabled**
 
- .. image:: /images/image384.png
+ .. image:: images/image384.png
 
 4. On the Bot Defense tab set to **Enabled** all available options as per screenshot below.
 
- .. image:: /images/image385.png
+ .. image:: images/image385.png
 
 5. Click Finished
 
@@ -89,6 +89,6 @@ Binding
 .. NOTE::
    If you are using prebuilt objects, make sure you enable **Application Security Policy** and specify the policy **prebuilt_API_Security_Policy**
 
-.. image:: /images/image386.png
+.. image:: images/image386.png
 
 2. Click Update.
