@@ -39,7 +39,7 @@ Illegal content type protection configuration
 
 5. In the Request Body Handling dropdown menu select **JSON** and in the Profile Name specify **API_LAB_JSON**
 
- .. image:: images/image397.png
+ .. image:: images/image500.png
 
 6. Click Add, Update and Apply Policy
 
@@ -47,6 +47,8 @@ Validation
 -----------------------------------
 
 1. Go back to Postman and run **Non-JSON request** again - this API call should be blocked
+
+.. image:: images/image397.png
 
 2. In the BIG-IP GUI to Security -> Event Logs -> Application - Requests and examine the last log message
 

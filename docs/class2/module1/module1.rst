@@ -59,6 +59,8 @@ In this task you will create JSON profile which will be used in API security pol
 
 3. Click Create
 
+4. Click on Apply Policy
+
 
 Create a new Logging profile
 ------------------------------------
