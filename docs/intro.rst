@@ -1,13 +1,13 @@
 Getting Started
 ---------------
 
-Instructor will provide you with access credentials to training portal as well as login page. 
+Instructor will provide you with access credentials to training portal as well as login page.
 
- .. image:: /_static/portal1.png
+ .. image:: _static/portal1.png
 
-Once logged in you should tap on “View”. You should be able to see Virtual Machines as shown below. Copy DNS name of Windows jumpbox to clipboard and use your Remote Desktop client to connect. 
+Once logged in you should tap on “View”. You should be able to see Virtual Machines as shown below. Copy DNS name of Windows jumpbox to clipboard and use your Remote Desktop client to connect.
 
- .. image:: /_static/portal2.png
+ .. image:: _static/portal2.png
 
 .. NOTE::
 	 All work for this lab will be performed exclusively from the Windows
@@ -45,16 +45,14 @@ The following components have been included in your lab environment:
 
 On the picture below you can see network topology. Basically, you will be sending various API calls to API server proxied through BIG-IP VE.
 
- .. image:: /_static/diagram.png
+ .. image:: _static/diagram.png
 
-Traffic from Windows Jumpbox will be proxied through the BIG-IP to API Server. 
+Traffic from Windows Jumpbox will be proxied through the BIG-IP to API Server.
 
 Lab tools
 ~~~~~~~~~~~~~~~~
 
-You will use Postman application to run API calls from Windows Jumpbox. Postman provide friendly and easy to use GUI for interacting with various APIs. Moreover, it is frequently used for designing, debugging, automated testing, debugging and overall lifecycle management for the APIs.  
+You will use Postman application to run API calls from Windows Jumpbox. Postman provide friendly and easy to use GUI for interacting with various APIs. Moreover, it is frequently used for designing, debugging, automated testing, debugging and overall lifecycle management for the APIs.
 
 .. HINT::
    More information can be found at https://www.getpostman.com/
-
- 

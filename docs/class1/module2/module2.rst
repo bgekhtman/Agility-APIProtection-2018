@@ -15,8 +15,8 @@ If you want to skip configuration section and use prebuilt objects proceed to `p
 Create a JWK (JSON Web Key)
 --------------------------------------
 
-In this task you will create a JWK to use for validating the JWT sent. 
-In this lab you will use Octet and a shared secret, but options include 
+In this task you will create a JWK to use for validating the JWT sent.
+In this lab you will use Octet and a shared secret, but options include
 solutions like public/private key pair as well.
 
 1.	In the BIG-IP GUI go to Access -> Federation -> JSON Web Token -> Key Configuration -> click **Create**
@@ -35,8 +35,8 @@ solutions like public/private key pair as well.
 | Shared Secret	           | secret		   |
 +--------------------------+-----------------------+
 
- .. image:: /_static/image40.png
- 
+ .. image:: images/image40.png
+
 Create an OAuth provider
 --------------------------------------
 
@@ -52,7 +52,7 @@ a JWT created by it.
 +------------------------------+--------------------------------------------------------------------------+
 | Type		               | F5				                                          |
 +------------------------------+--------------------------------------------------------------------------+
-| OpenID URI	               | https://as.vlab.f5demo.com/f5-oauth2/v1/.well-known/openid-configuration |    
+| OpenID URI	               | https://as.vlab.f5demo.com/f5-oauth2/v1/.well-known/openid-configuration |
 +------------------------------+--------------------------------------------------------------------------+
 | Authentication URI           | https://as.vlab.f5demo.com/f5-oauth2/v1/authorize                        |
 +------------------------------+--------------------------------------------------------------------------+
@@ -64,31 +64,31 @@ a JWT created by it.
 |
 2. Click **Discover** next the OpenID URI field.
 
- .. image:: /_static/image41.png
+ .. image:: images/image41.png
 
 
 3. Click **Save**.
 
- 
+
 Setup the Token Configuration
 --------------------------------------
 
 In this task you will adjust some of the values retrieved automatically
-via OIDC discover tool. This is necessary because the OIDC AS cannot 
+via OIDC discover tool. This is necessary because the OIDC AS cannot
 provide you with the values specific to your audience.
 
 1.	Go to Access -> Federation -> JSON Web Token -> Token Configuration -> Click on **auto_jwt_as-provider**
 
 2.	Type **https://api.vlab.f5demo.com** into **audience** and click **Add**
 
- .. image:: /_static/image42.png
- 
+ .. image:: images/image42.png
+
 3.	Under **Additional Key** add the **api-jwk** you just created as allowed
 
- .. image:: /_static/image43.png
+ .. image:: images/image43.png
 
 4. Click **Save**.
- 
+
 Create a JWT Provider
 ---------------------
 
@@ -102,8 +102,8 @@ a per request or per session policy for JWT validation.
 
 3.	Provider: Select **/Common/as-provider** and click **Add**
 
- .. image:: /_static/image44.png
- 
+ .. image:: images/image44.png
+
 4.	Click **Save**.
 
 Create a per session policy
@@ -129,17 +129,17 @@ JWT token and collect the claims data from parameters inside the JWT.
 |
 *Also note that the User Identification Method is set to OAuth Token*
 
-.. image:: /_static/image45.png
-| 
-.. image:: /_static/image46.png
-|  
-.. image:: /_static/image47.png
+.. image:: images/image45.png
+
+.. image:: images/image46.png
+
+.. image:: images/image47.png
 
 3.	Click **Finished**
 
 4.	Click **Edit** on the line with the new api-psp policy you just created, a new tab will open
 
-.. image:: /_static/image48.png
+.. image:: images/image48.png
 
 5.	Click the **+** between Start and Deny
 
@@ -159,7 +159,7 @@ JWT token and collect the claims data from parameters inside the JWT.
 
 9.	Apply the policy, the final should look like this:
 
-.. image:: /_static/image49.png
+.. image:: images/image49.png
 
 10.	Close the new tab
 
@@ -179,12 +179,12 @@ each request by checking for the presence and validity of a JWT.
 
 5.	Your policy should look like this:
 
-.. image:: /_static/image50.png
+.. image:: images/image50.png
 
 
 ------------------------------------
 
-It is not necessary to “Apply Policy” after work on a per request policy 
+It is not necessary to “Apply Policy” after work on a per request policy
 because it instantly applies to the next request,  unlike a per session policy,
 which will only apply to new requests after applying.
 
@@ -206,7 +206,7 @@ server.
 
 4. Change Per Request Policy from none to **api-prp**
 
- .. image:: /_static/virt-assign.png
+ .. image:: images/virt-assign.png
 
 5. Click **Update**
 
@@ -224,7 +224,7 @@ because you do not present a valid JWT.
 3. Review the response, note the 401 unauthorized and the header
    indicating you did not present a valid token
 
- .. image:: /_static/image20.png
+ .. image:: images/image20.png
 
 Get a JWT from the Authorization Server
 ---------------------------------------
@@ -235,7 +235,7 @@ Get a JWT from the Authorization Server
 
 3. Click **Get New Access Token**
 
- .. image:: /_static/image21.png
+ .. image:: images/image21.png
 
 Postman provides a mechanism to handle the OAuth client workflow
 automatically. This means it will handle getting the authorization code
@@ -268,7 +268,7 @@ URL specified here is a special callback URL that the Postman client
 intercepts and handles rather than calling out to the getpostman.com
 website.
 
- .. image:: /_static/image22.png
+ .. image:: images/image22.png
 
 1. Click **Request Token**
 
@@ -285,12 +285,12 @@ website.
 
 6. Click **Preview Request**, the result should be this:
 
- .. image:: /_static/image23.png
+ .. image:: images/image23.png
 
 7. Go to the **Headers** tab and review the inserted **Bearer** token
    header:
 
- .. image:: /_static/image24.png
+ .. image:: images/image24.png
 
 Send the request with JWT and review response
 ---------------------------------------------
@@ -300,9 +300,8 @@ Send the request with JWT and review response
 2. Note that now it is a **200 OK** instead of 401 Unauthorized and that you
    have response data in the body.
 
- .. image:: /_static/image25.png
+ .. image:: images/image25.png
 
 You have now implemented coarse grained authorization and are requiring
 clients to request a JWT from a trusted authorization server before
 allowing access to the API.
-
