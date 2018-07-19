@@ -12,13 +12,13 @@ DoS profile configuration
 
 1. In the BIG-IP GUI navigate to Security -> DoS Protection -> DoS Profile and click Create; Define the name **API_DoS** and click Finished
 
-2. Click on just created DoS profile and go to **Application Security** tab; click **Edit**,  set the checkbox for **Application Security** and examine configuration options
+2. Click on just created DoS profile and go to **Application Security** tab; click **Edit**,  set the checkbox for enabled on **Application Security** and examine configuration options
 
 3. Proceed to **TPS-Based Detection**, make sure it is enabled and set mitigation criteria **By Source IP**: **reached at least** value to **2** and **absolute threshold TPS reached** to **3** tps, then click Update
 
  .. image:: images/image414.png
 
-4. Navigate to Local Traffic -> Virtual Servers -> **api.vlab.f5demo.com -> Security -> Policies and enable DoS Protection Profile; choose just configured **API_DoS** profile from the dropdown menu
+4. Navigate to Local Traffic -> Virtual Servers -> **api.vlab.f5demo.com** -> Security -> Policies and enable DoS Protection Profile; choose just configured **API_DOS** profile from the dropdown menu
 
  .. image:: images/image415.png
 

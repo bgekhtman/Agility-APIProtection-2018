@@ -53,7 +53,7 @@ Validation
 
  .. image:: images/image405.png
 
-Note, the parameter's value for "salary" should be masked
+..Note:: the parameter's value for "salary" should be masked
 
  .. image:: images/image406.png
 

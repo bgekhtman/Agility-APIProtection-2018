@@ -6,7 +6,7 @@ In this module you will examine security controls allowing to protect against kn
 Examine unprotected API environment
 -----------------------------------
 
-Prior to beginning this lab go to the BIG-IP Security -> Application Security -> Policy Building -> Learning and Blocking Settings.  Expand the Attack Signatures.  Click on Change, unselect the API_Lab_SigSet and click change.  Save the policy and Apply Policy.  This will allow for the following task to complete.  We will reapply the signature in the next task.
+..NOTE:: Prior to beginning this lab go to the BIG-IP Security -> Application Security -> Policy Building -> Learning and Blocking Settings.  Expand the Attack Signatures.  Click on Change, unselect the API_Lab_SigSet and click change.  Save the policy and Apply Policy.  This will allow for the following task to complete.  We will reapply the signature in the next task.
 
 1. Launch Postman application
 
