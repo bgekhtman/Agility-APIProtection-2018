@@ -48,7 +48,7 @@ Validation
 
 1. Go back to Postman and run **Non-JSON request** again - this API call should be blocked
 
-.. image:: images/image397.png
+.. image:: images/image501.png
 
 2. In the BIG-IP GUI to Security -> Event Logs -> Application - Requests and examine the last log message
 
