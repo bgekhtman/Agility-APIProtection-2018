@@ -6,6 +6,8 @@ In this module you will examine security controls allowing to protect against kn
 Examine unprotected API environment
 -----------------------------------
 
+Prior to beginning this lab go to the BIG-IP Security -> Application Security -> Policy Building -> Learning and Blocking Settings.  Expand the Attack Signatures.  Click on Change, unselect the API_Lab_SigSet and click change.  Save the policy and Apply Policy.  This will allow for the following task to complete.  We will reapply the signature in the next task.
+
 1. Launch Postman application
 
 2. Click Collections -> HR_API_Illegal -> Shellshock. Click **Headers** and examine the value for **User-Agent**
@@ -27,7 +29,7 @@ Attacks protection configuration
 
 1. In the BIG-IP GUI navigate to Security -> Options -> Application Security -> Attack Signatures -> Attack Signature Sets
 
-2. Tap Create, define a name **API_Lab_SigSet**, select all items in the **Available Systems** list and move it into **Assigned Systems**. Specify **Risk** as **Greater Than/Equal Medium** and tap Create
+2. Tap Create, define a name **API_Lab_SigSet2**, select all items in the **Available Systems** list and move it into **Assigned Systems**. Specify **Risk** as **Greater Than/Equal Medium** and tap Create
 
  .. image:: images/image410.png
 
@@ -36,6 +38,8 @@ Attacks protection configuration
  .. image:: images/image411.png
 
 4. Uncheck **Generic Detection Signatures** and check **API_Lab_SigSet**, then click Change, Save and Apply Policy
+
+..NOTE You can choose the prebuilt set or the set you just created.
 
  .. image:: images/image412.png
 

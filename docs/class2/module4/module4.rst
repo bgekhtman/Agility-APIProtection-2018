@@ -30,7 +30,7 @@ Parameters enforcement configuration
 
 1. Navigate to to Security -> Application Security -> Parameters -> Parameters List and delete **_Viewstate** parameter
 
-2. Create parameter **middle_initial**, uncheck **Perform Staging** and define the value for **Maximum Length** as **1**
+2. Create parameter **middle_initial**, uncheck **Perform Staging** and define the value for **Maximum Length** as **1**, then click Create
 
  .. image:: images/image403.png
 
@@ -60,3 +60,5 @@ Note, the parameter's value for "salary" should be masked
 3. Go back to Postman, expand **body** section of **Parameter Length&Security** and modify **middle_initial** parameter value to **B**, then click Save and Send - API call should go through
 
  .. image:: images/image408.png
+
+4.  In the BIG-IP GUI go to Security -> Event Logs -> Application - Requests clear the illegal filter and examine the request.  Is Salary still protected?
