@@ -1,6 +1,6 @@
 Examples of Common Formatting
 =============================
-JAMES
+
 .. TODO:: Examples need to be removed from your class
 
 .. HINT:: To remove this page:
