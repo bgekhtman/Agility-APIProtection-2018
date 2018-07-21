@@ -14,7 +14,7 @@ restrict access to parts of the API based on parameters in the JWT. The
 example will relate to user group membership, but it could be many
 parameters (e.g. company, user, group, as source, etc).
 
-The goal is to restrict access to any person API requests to only
+The goal is to restrict access to any person's API requests to only
 members of the HR department.
 
 
@@ -108,7 +108,7 @@ Validation
 
 In this task you will test the settings you just put in the per request
 policy. You are expecting to be denied access to the /person URL because
-employeeuser is not in the HR group that you have marked as a required
+**employeeuser** is not in the **HR** group that you have marked as a required
 value in the JWT.
 
 1. On the left side, select **List Employee Record**. It will now appear

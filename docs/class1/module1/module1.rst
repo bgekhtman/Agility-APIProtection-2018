@@ -64,7 +64,7 @@ Determine Police Department Salary Total
 Change environment variable for department
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Notice the GET request URI has a variable in it name **{{department}}**
+1. Notice the GET request URI has a variable in its name **{{department}}**
 
  .. image:: images/image3.png
 
@@ -108,7 +108,7 @@ You can practice with building your own API calls with Postman.
 .. NOTE::
    This section is optional and can be skipped
 
-The goal of this exercise is to gain practical expirience with API calls and to research existing BIG-IP configuration. For this purpose you are going to utilize BIG-IP iControl.
+The goal of this exercise is to gain practical experience with API calls and to research existing BIG-IP configuration. For this purpose you are going to utilize BIG-IP iControl.
 
 1. In Postman create new collection, define a name **BIG-IP**
 

@@ -52,7 +52,7 @@ Traffic from Windows Jumpbox will be proxied through the BIG-IP to API Server.
 Lab tools
 ~~~~~~~~~~~~~~~~
 
-You will use Postman application to run API calls from Windows Jumpbox. Postman provide friendly and easy to use GUI for interacting with various APIs. Moreover, it is frequently used for designing, debugging, automated testing, debugging and overall lifecycle management for the APIs.
+You will use Postman application to run API calls from Windows Jumpbox. Postman provides friendly and easy to use GUI for interacting with various APIs. Moreover, it is frequently used for designing, debugging, automated testing, debugging and overall lifecycle management for the APIs.
 
 .. HINT::
    More information can be found at https://www.getpostman.com/

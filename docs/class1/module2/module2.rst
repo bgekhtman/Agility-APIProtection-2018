@@ -10,7 +10,7 @@ In this module you will implement authorization requirements. You will
 require a valid JWT (JSON Web Token) before a client can access the API.
 You will then gather a valid JWT and leverage it to make an API request.
 
-If you want to skip configuration section and use prebuilt objects proceed to `policy binding. <#binding>`__  Keep in mind, you will have to use objects with **prebuilt** suffix.
+If you want to skip this configuration section and use prebuilt objects proceed to `policy binding. <#binding>`__  Keep in mind, you will have to use objects with **prebuilt** suffix.
 
 Create a JWK (JSON Web Key)
 --------------------------------------
@@ -62,7 +62,7 @@ a JWT created by it.
 +------------------------------+--------------------------------------------------------------------------+
 
 |
-2. Click **Discover** next the OpenID URI field.
+2. Click **Discover** next to the OpenID URI field.
 
  .. image:: images/image41.png
 
@@ -192,7 +192,7 @@ which will only apply to new requests after applying.
 
 6.	Close the new tab
 
-Binding
+Policy Binding
 --------------------------------------
 
 In this task you will add the policies you created to the virtual
