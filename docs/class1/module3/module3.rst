@@ -142,7 +142,7 @@ Acquire a JWT for hruser and validate it can access /person
 In this task you will get another JWT and use that to gain access to the
 /person portion of the API.
 
-1.  Click Get **New Access Token**
+1.  Click **Get New Access Token**
 
  .. image:: images/image32.png
 
@@ -164,9 +164,9 @@ In this task you will get another JWT and use that to gain access to the
 
 6.  Notice you now have two tokens, and click the X to close the window
 
-7.  Select hruser from the Available Tokens drop down
+7.  Select **hruser** from the Available Tokens drop down
 
-8.  Click Preview Request
+8.  Click **Preview Request**
 
  .. image:: images/image36.png
 
