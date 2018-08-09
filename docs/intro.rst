@@ -5,7 +5,7 @@ Open your browser, proceed to http://training.f5agility.com and enter class# and
 
  .. image:: _static/home.png
 
-You should be able to see Virtual Machines as shown below. Click on **RDP** for Windows Jumpbox and connect via RDP
+You should be able to see Virtual Machines as shown below. Click on **RDP** for Windows Jumpbox and connect via RDP. Picture below is an example, you should see virtual machines with different names. 
 
  .. image:: _static/home1.png
 
