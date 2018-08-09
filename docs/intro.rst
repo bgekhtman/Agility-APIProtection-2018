@@ -1,13 +1,13 @@
 Getting Started
 ---------------
 
-Instructor will provide you with access credentials to training portal as well as login page.
+Open your browser, proceed to http://training.f5agility.com and enter class# and student#
 
- .. image:: _static/portal1.png
+ .. image:: _static/home.png
 
-Once logged in you should tap on “View”. You should be able to see Virtual Machines as shown below. Copy DNS name of Windows jumpbox to clipboard and use your Remote Desktop client to connect.
+You should be able to see Virtual Machines as shown below. Click on **RDP** for Windows Jumpbox and connect via RDP
 
- .. image:: _static/portal2.png
+ .. image:: _static/home1.png
 
 .. NOTE::
 	 All work for this lab will be performed exclusively from the Windows
