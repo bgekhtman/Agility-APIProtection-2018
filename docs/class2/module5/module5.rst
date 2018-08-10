@@ -36,7 +36,7 @@ Attacks protection configuration
 
  .. image:: images/image411.png
 
-4. Uncheck **Generic Detection Signatures** and check **API_Lab_SigSet**, then click Change, Save and Apply Policy
+4. Uncheck **Generic Detection Signatures** and check **API_Lab_SigSet2**, then click Change, Save and Apply Policy
 
 You can choose the prebuilt set or the set you just created.
 

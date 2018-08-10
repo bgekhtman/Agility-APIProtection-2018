@@ -27,7 +27,7 @@ Examine protected API environment
 
 1. Go to Postman, expand **HR_API_DoS** collection and click on **DoS** API call
 
-2. Make sure authorization type is set to **OAuth 2.0**. From the list of available tokens select **hruser** and click **Preview Request**. Then click **Send**. Make sure you are getting expected response and click **Save**
+2. Make sure authorization type is set to **OAuth 2.0**. From the list of available tokens select **hruser** and click **Preview Request**. Then click **Send**. Make sure you are getting expected response (You should be able to see list of departments in the response) and click **Save**
 
  .. image:: images/image416.png
 
